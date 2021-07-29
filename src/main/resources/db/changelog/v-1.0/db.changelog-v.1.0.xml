@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="pavel_ter">
+        <sqlFile dbms="postgreSQL"
+                 encoding="utf8"
+                 endDelimiter="\nGO"
+                 relativeToChangelogFile="true"
+                 splitStatements="true"
+                 stripComments="true"
+                 path="01-create-account-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgreSQL"
+                     encoding="utf8"
+                     endDelimiter="\nGO"
+                     relativeToChangelogFile="true"
+                     splitStatements="true"
+                     stripComments="true"
+                     path="01-drop-account-table.sql"/>
+        </rollback>
+    </changeSet>
+    <changeSet id="2" author="pavel_ter">
+        <sqlFile dbms="postgreSQL"
+                 encoding="utf8"
+                 endDelimiter="\nGO"
+                 relativeToChangelogFile="true"
+                 splitStatements="true"
+                 stripComments="true"
+                 path="02-create-client-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgreSQL"
+                     encoding="utf8"
+                     endDelimiter="\nGO"
+                     relativeToChangelogFile="true"
+                     splitStatements="true"
+                     stripComments="true"
+                     path="02-drop-client-table.sql"/>
+        </rollback>
+    </changeSet>
+    <changeSet id="3" author="pavel_ter">
+        <sqlFile dbms="postgreSQL"
+                 encoding="utf8"
+                 endDelimiter="\nGO"
+                 relativeToChangelogFile="true"
+                 splitStatements="true"
+                 stripComments="true"
+                 path="03-create-transaction-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgreSQL"
+                     encoding="utf8"
+                     endDelimiter="\nGO"
+                     relativeToChangelogFile="true"
+                     splitStatements="true"
+                     stripComments="true"
+                     path="03-drop-transaction-table.sql"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

@@ -1150,3 +1150,412 @@ Caused by: org.springframework.data.mapping.PropertyReferenceException: No prope
 2021-07-29 20:21:13.771  INFO 14368 --- [RMI TCP Connection(1)-192.168.0.104] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2021-07-29 20:21:13.771  INFO 14368 --- [RMI TCP Connection(1)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2021-07-29 20:21:13.772  INFO 14368 --- [RMI TCP Connection(1)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-29 21:14:11.368  INFO 19040 --- [main] c.t.p.PaymentserviceApplication          : Starting PaymentserviceApplication using Java 15.0.2 on WIN-K93OM2IS26K with PID 19040 (C:\Users\Teren\Desktop\paymentservice\target\classes started by Teren in C:\Users\Teren\Desktop\paymentservice)
+2021-07-29 21:14:11.369  INFO 19040 --- [main] c.t.p.PaymentserviceApplication          : No active profile set, falling back to default profiles: default
+2021-07-29 21:14:12.016  INFO 19040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-29 21:14:12.017  INFO 19040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-07-29 21:14:12.040  INFO 19040 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.AccountRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:14:12.041  INFO 19040 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.ClientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:14:12.043  INFO 19040 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.TransactionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:14:12.044  INFO 19040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 JDBC repository interfaces.
+2021-07-29 21:14:12.050  INFO 19040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-29 21:14:12.050  INFO 19040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-29 21:14:12.095  INFO 19040 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 3 JPA repository interfaces.
+2021-07-29 21:14:12.527  INFO 19040 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-29 21:14:12.534  INFO 19040 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-29 21:14:12.534  INFO 19040 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-07-29 21:14:12.606  INFO 19040 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-29 21:14:12.606  INFO 19040 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1203 ms
+2021-07-29 21:14:12.921  WARN 19040 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception; nested exception is java.lang.NoSuchMethodError: 'void liquibase.integration.spring.SpringLiquibase.setClearCheckSums(boolean)'
+2021-07-29 21:14:12.923  INFO 19040 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-07-29 21:14:12.935  INFO 19040 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-29 21:14:12.951 ERROR 19040 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.liquibase(LiquibaseAutoConfiguration.java:94)
+
+The following method did not exist:
+
+    'void liquibase.integration.spring.SpringLiquibase.setClearCheckSums(boolean)'
+
+The method's class, liquibase.integration.spring.SpringLiquibase, is available from the following locations:
+
+    jar:file:/C:/Users/Teren/.m2/repository/org/liquibase/liquibase-core/3.4.1/liquibase-core-3.4.1.jar!/liquibase/integration/spring/SpringLiquibase.class
+
+The class hierarchy was loaded from the following locations:
+
+    liquibase.integration.spring.SpringLiquibase: file:/C:/Users/Teren/.m2/repository/org/liquibase/liquibase-core/3.4.1/liquibase-core-3.4.1.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains a single, compatible version of liquibase.integration.spring.SpringLiquibase
+
+2021-07-29 21:14:26.901  INFO 12880 --- [main] c.t.p.PaymentserviceApplication          : Starting PaymentserviceApplication using Java 15.0.2 on WIN-K93OM2IS26K with PID 12880 (C:\Users\Teren\Desktop\paymentservice\target\classes started by Teren in C:\Users\Teren\Desktop\paymentservice)
+2021-07-29 21:14:26.903  INFO 12880 --- [main] c.t.p.PaymentserviceApplication          : No active profile set, falling back to default profiles: default
+2021-07-29 21:14:27.502  INFO 12880 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-29 21:14:27.502  INFO 12880 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-07-29 21:14:27.522  INFO 12880 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.AccountRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:14:27.523  INFO 12880 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.ClientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:14:27.524  INFO 12880 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.TransactionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:14:27.524  INFO 12880 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 JDBC repository interfaces.
+2021-07-29 21:14:27.529  INFO 12880 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-29 21:14:27.530  INFO 12880 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-29 21:14:27.569  INFO 12880 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+2021-07-29 21:14:27.913  INFO 12880 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-29 21:14:27.918  INFO 12880 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-29 21:14:27.919  INFO 12880 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-07-29 21:14:27.988  INFO 12880 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-29 21:14:27.989  INFO 12880 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1055 ms
+2021-07-29 21:14:28.294  WARN 12880 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception; nested exception is java.lang.NoSuchMethodError: 'void liquibase.integration.spring.SpringLiquibase.setClearCheckSums(boolean)'
+2021-07-29 21:14:28.296  INFO 12880 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-07-29 21:14:28.308  INFO 12880 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-29 21:14:28.318 ERROR 12880 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.liquibase(LiquibaseAutoConfiguration.java:94)
+
+The following method did not exist:
+
+    'void liquibase.integration.spring.SpringLiquibase.setClearCheckSums(boolean)'
+
+The method's class, liquibase.integration.spring.SpringLiquibase, is available from the following locations:
+
+    jar:file:/C:/Users/Teren/.m2/repository/org/liquibase/liquibase-core/3.4.1/liquibase-core-3.4.1.jar!/liquibase/integration/spring/SpringLiquibase.class
+
+The class hierarchy was loaded from the following locations:
+
+    liquibase.integration.spring.SpringLiquibase: file:/C:/Users/Teren/.m2/repository/org/liquibase/liquibase-core/3.4.1/liquibase-core-3.4.1.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains a single, compatible version of liquibase.integration.spring.SpringLiquibase
+
+2021-07-29 21:14:47.504  INFO 10440 --- [main] c.t.p.PaymentserviceApplication          : Starting PaymentserviceApplication using Java 15.0.2 on WIN-K93OM2IS26K with PID 10440 (C:\Users\Teren\Desktop\paymentservice\target\classes started by Teren in C:\Users\Teren\Desktop\paymentservice)
+2021-07-29 21:14:47.506  INFO 10440 --- [main] c.t.p.PaymentserviceApplication          : No active profile set, falling back to default profiles: default
+2021-07-29 21:14:48.107  INFO 10440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-29 21:14:48.107  INFO 10440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-07-29 21:14:48.127  INFO 10440 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.AccountRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:14:48.128  INFO 10440 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.ClientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:14:48.129  INFO 10440 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.TransactionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:14:48.130  INFO 10440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 JDBC repository interfaces.
+2021-07-29 21:14:48.141  INFO 10440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-29 21:14:48.141  INFO 10440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-29 21:14:48.170  INFO 10440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 3 JPA repository interfaces.
+2021-07-29 21:14:48.502  INFO 10440 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-29 21:14:48.507  INFO 10440 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-29 21:14:48.508  INFO 10440 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-07-29 21:14:48.577  INFO 10440 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-29 21:14:48.577  INFO 10440 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1040 ms
+2021-07-29 21:14:48.881  WARN 10440 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception; nested exception is java.lang.NoSuchMethodError: 'void liquibase.integration.spring.SpringLiquibase.setClearCheckSums(boolean)'
+2021-07-29 21:14:48.884  INFO 10440 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-07-29 21:14:48.896  INFO 10440 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-29 21:14:48.906 ERROR 10440 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.liquibase(LiquibaseAutoConfiguration.java:94)
+
+The following method did not exist:
+
+    'void liquibase.integration.spring.SpringLiquibase.setClearCheckSums(boolean)'
+
+The method's class, liquibase.integration.spring.SpringLiquibase, is available from the following locations:
+
+    jar:file:/C:/Users/Teren/.m2/repository/org/liquibase/liquibase-core/3.4.1/liquibase-core-3.4.1.jar!/liquibase/integration/spring/SpringLiquibase.class
+
+The class hierarchy was loaded from the following locations:
+
+    liquibase.integration.spring.SpringLiquibase: file:/C:/Users/Teren/.m2/repository/org/liquibase/liquibase-core/3.4.1/liquibase-core-3.4.1.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains a single, compatible version of liquibase.integration.spring.SpringLiquibase
+
+2021-07-29 21:16:19.913  INFO 18516 --- [main] c.t.p.PaymentserviceApplication          : Starting PaymentserviceApplication using Java 15.0.2 on WIN-K93OM2IS26K with PID 18516 (C:\Users\Teren\Desktop\paymentservice\target\classes started by Teren in C:\Users\Teren\Desktop\paymentservice)
+2021-07-29 21:16:19.914  INFO 18516 --- [main] c.t.p.PaymentserviceApplication          : No active profile set, falling back to default profiles: default
+2021-07-29 21:16:20.539  INFO 18516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-29 21:16:20.540  INFO 18516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-07-29 21:16:20.567  INFO 18516 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.AccountRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:16:20.569  INFO 18516 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.ClientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:16:20.570  INFO 18516 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.TransactionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:16:20.570  INFO 18516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 0 JDBC repository interfaces.
+2021-07-29 21:16:20.575  INFO 18516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-29 21:16:20.575  INFO 18516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-29 21:16:20.612  INFO 18516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 3 JPA repository interfaces.
+2021-07-29 21:16:20.947  INFO 18516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-29 21:16:20.952  INFO 18516 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-29 21:16:20.953  INFO 18516 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-07-29 21:16:21.020  INFO 18516 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-29 21:16:21.020  INFO 18516 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1072 ms
+2021-07-29 21:16:21.316  WARN 18516 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception; nested exception is java.lang.NoSuchMethodError: 'void liquibase.integration.spring.SpringLiquibase.setClearCheckSums(boolean)'
+2021-07-29 21:16:21.318  INFO 18516 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-07-29 21:16:21.330  INFO 18516 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-29 21:16:21.340 ERROR 18516 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.liquibase(LiquibaseAutoConfiguration.java:94)
+
+The following method did not exist:
+
+    'void liquibase.integration.spring.SpringLiquibase.setClearCheckSums(boolean)'
+
+The method's class, liquibase.integration.spring.SpringLiquibase, is available from the following locations:
+
+    jar:file:/C:/Users/Teren/.m2/repository/org/liquibase/liquibase-core/3.4.1/liquibase-core-3.4.1.jar!/liquibase/integration/spring/SpringLiquibase.class
+
+The class hierarchy was loaded from the following locations:
+
+    liquibase.integration.spring.SpringLiquibase: file:/C:/Users/Teren/.m2/repository/org/liquibase/liquibase-core/3.4.1/liquibase-core-3.4.1.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains a single, compatible version of liquibase.integration.spring.SpringLiquibase
+
+2021-07-29 21:17:21.659  INFO 11392 --- [main] c.t.p.PaymentserviceApplication          : Starting PaymentserviceApplication using Java 15.0.2 on WIN-K93OM2IS26K with PID 11392 (C:\Users\Teren\Desktop\paymentservice\target\classes started by Teren in C:\Users\Teren\Desktop\paymentservice)
+2021-07-29 21:17:21.660  INFO 11392 --- [main] c.t.p.PaymentserviceApplication          : No active profile set, falling back to default profiles: default
+2021-07-29 21:17:22.262  INFO 11392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-29 21:17:22.263  INFO 11392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-07-29 21:17:22.297  INFO 11392 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.AccountRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:17:22.299  INFO 11392 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.ClientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:17:22.301  INFO 11392 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.TransactionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:17:22.302  INFO 11392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 0 JDBC repository interfaces.
+2021-07-29 21:17:22.311  INFO 11392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-29 21:17:22.311  INFO 11392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-29 21:17:22.362  INFO 11392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 3 JPA repository interfaces.
+2021-07-29 21:17:22.756  INFO 11392 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-29 21:17:22.761  INFO 11392 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-29 21:17:22.761  INFO 11392 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-07-29 21:17:22.828  INFO 11392 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-29 21:17:22.828  INFO 11392 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1139 ms
+2021-07-29 21:17:23.049  INFO 11392 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-29 21:17:23.165  INFO 11392 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-29 21:17:23.484  INFO 11392 --- [main] liquibase.database                       : Set default schema name to public
+2021-07-29 21:17:23.538  INFO 11392 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2021-07-29 21:17:23.573  INFO 11392 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2021-07-29 21:17:23.580  WARN 11392 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: The file classpath:db/changelog/db.changelog-master.xml was not found in
+    - Spring resources
+Specifying files by absolute path was removed in Liquibase 4.0. Please use a relative path or add '/' to the classpath parameter.
+2021-07-29 21:17:23.580  INFO 11392 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-29 21:17:23.582  INFO 11392 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-29 21:17:23.585  INFO 11392 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-07-29 21:17:23.597  INFO 11392 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-29 21:17:23.611 ERROR 11392 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: The file classpath:db/changelog/db.changelog-master.xml was not found in
+    - Spring resources
+Specifying files by absolute path was removed in Liquibase 4.0. Please use a relative path or add '/' to the classpath parameter.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.9.jar:5.3.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.9.jar:5.3.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.9.jar:5.3.9]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332) ~[spring-boot-2.5.3.jar:2.5.3]
+	at com.terenko.paymentservice.PaymentserviceApplication.main(PaymentserviceApplication.java:57) ~[classes/:na]
+Caused by: liquibase.exception.ChangeLogParseException: The file classpath:db/changelog/db.changelog-master.xml was not found in
+    - Spring resources
+Specifying files by absolute path was removed in Liquibase 4.0. Please use a relative path or add '/' to the classpath parameter.
+	at liquibase.parser.core.xml.XMLChangeLogSAXParser.parseToNode(XMLChangeLogSAXParser.java:82) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.parser.core.xml.AbstractChangeLogParser.parse(AbstractChangeLogParser.java:15) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.Liquibase.getDatabaseChangeLog(Liquibase.java:369) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.Liquibase.lambda$update$1(Liquibase.java:224) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:166) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.Scope.child(Scope.java:175) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.Scope.child(Scope.java:165) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.Scope.child(Scope.java:144) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.Liquibase.runInScope(Liquibase.java:2404) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:211) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:197) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:314) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:269) ~[liquibase-core-4.4.2.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.9.jar:5.3.9]
+	... 18 common frames omitted
+
+2021-07-29 21:18:24.004  INFO 5568 --- [main] c.t.p.PaymentserviceApplication          : Starting PaymentserviceApplication using Java 15.0.2 on WIN-K93OM2IS26K with PID 5568 (C:\Users\Teren\Desktop\paymentservice\target\classes started by Teren in C:\Users\Teren\Desktop\paymentservice)
+2021-07-29 21:18:24.005  INFO 5568 --- [main] c.t.p.PaymentserviceApplication          : No active profile set, falling back to default profiles: default
+2021-07-29 21:18:24.614  INFO 5568 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-29 21:18:24.615  INFO 5568 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-07-29 21:18:24.634  INFO 5568 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.AccountRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:18:24.635  INFO 5568 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.ClientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:18:24.636  INFO 5568 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.TransactionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:18:24.637  INFO 5568 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 JDBC repository interfaces.
+2021-07-29 21:18:24.649  INFO 5568 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-29 21:18:24.649  INFO 5568 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-29 21:18:24.678  INFO 5568 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 3 JPA repository interfaces.
+2021-07-29 21:18:25.012  INFO 5568 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-29 21:18:25.018  INFO 5568 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-29 21:18:25.018  INFO 5568 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-07-29 21:18:25.087  INFO 5568 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-29 21:18:25.088  INFO 5568 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1053 ms
+2021-07-29 21:18:25.263  INFO 5568 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-29 21:18:25.367  INFO 5568 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-29 21:18:25.645  INFO 5568 --- [main] liquibase.database                       : Set default schema name to public
+2021-07-29 21:18:25.685  INFO 5568 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2021-07-29 21:18:25.913  INFO 5568 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2021-07-29 21:18:25.919  WARN 5568 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: liquibase.exception.SetupException: The file db/changelog/v-1.0/db.changelog-v.1.0.xml was not found in
+    - Spring resources
+Specifying files by absolute path was removed in Liquibase 4.0. Please use a relative path or add '/' to the classpath parameter.
+2021-07-29 21:18:25.919  INFO 5568 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-29 21:18:25.921  INFO 5568 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-29 21:18:25.924  INFO 5568 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-07-29 21:18:25.935  INFO 5568 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-29 21:18:25.947 ERROR 5568 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ChangeLogParseException: liquibase.exception.SetupException: The file db/changelog/v-1.0/db.changelog-v.1.0.xml was not found in
+    - Spring resources
+Specifying files by absolute path was removed in Liquibase 4.0. Please use a relative path or add '/' to the classpath parameter.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.9.jar:5.3.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.9.jar:5.3.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.9.jar:5.3.9]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-2.5.3.jar:2.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332) ~[spring-boot-2.5.3.jar:2.5.3]
+	at com.terenko.paymentservice.PaymentserviceApplication.main(PaymentserviceApplication.java:57) ~[classes/:na]
+Caused by: liquibase.exception.ChangeLogParseException: liquibase.exception.SetupException: The file db/changelog/v-1.0/db.changelog-v.1.0.xml was not found in
+    - Spring resources
+Specifying files by absolute path was removed in Liquibase 4.0. Please use a relative path or add '/' to the classpath parameter.
+	at liquibase.parser.core.xml.AbstractChangeLogParser.parse(AbstractChangeLogParser.java:25) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.Liquibase.getDatabaseChangeLog(Liquibase.java:369) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.Liquibase.lambda$update$1(Liquibase.java:224) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:166) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.Scope.child(Scope.java:175) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.Scope.child(Scope.java:165) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.Scope.child(Scope.java:144) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.Liquibase.runInScope(Liquibase.java:2404) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:211) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:197) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:314) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:269) ~[liquibase-core-4.4.2.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.9.jar:5.3.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.9.jar:5.3.9]
+	... 18 common frames omitted
+Caused by: liquibase.exception.SetupException: The file db/changelog/v-1.0/db.changelog-v.1.0.xml was not found in
+    - Spring resources
+Specifying files by absolute path was removed in Liquibase 4.0. Please use a relative path or add '/' to the classpath parameter.
+	at liquibase.changelog.DatabaseChangeLog.handleChildNode(DatabaseChangeLog.java:374) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.changelog.DatabaseChangeLog.load(DatabaseChangeLog.java:321) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.parser.core.xml.AbstractChangeLogParser.parse(AbstractChangeLogParser.java:23) ~[liquibase-core-4.4.2.jar:na]
+	... 31 common frames omitted
+Caused by: liquibase.exception.ChangeLogParseException: The file db/changelog/v-1.0/db.changelog-v.1.0.xml was not found in
+    - Spring resources
+Specifying files by absolute path was removed in Liquibase 4.0. Please use a relative path or add '/' to the classpath parameter.
+	at liquibase.parser.core.xml.XMLChangeLogSAXParser.parseToNode(XMLChangeLogSAXParser.java:82) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.parser.core.xml.AbstractChangeLogParser.parse(AbstractChangeLogParser.java:15) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.changelog.DatabaseChangeLog.include(DatabaseChangeLog.java:593) ~[liquibase-core-4.4.2.jar:na]
+	at liquibase.changelog.DatabaseChangeLog.handleChildNode(DatabaseChangeLog.java:366) ~[liquibase-core-4.4.2.jar:na]
+	... 33 common frames omitted
+
+2021-07-29 21:18:48.633  INFO 17932 --- [main] c.t.p.PaymentserviceApplication          : Starting PaymentserviceApplication using Java 15.0.2 on WIN-K93OM2IS26K with PID 17932 (C:\Users\Teren\Desktop\paymentservice\target\classes started by Teren in C:\Users\Teren\Desktop\paymentservice)
+2021-07-29 21:18:48.635  INFO 17932 --- [main] c.t.p.PaymentserviceApplication          : No active profile set, falling back to default profiles: default
+2021-07-29 21:18:49.317  INFO 17932 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-29 21:18:49.318  INFO 17932 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-07-29 21:18:49.339  INFO 17932 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.AccountRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:18:49.340  INFO 17932 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.ClientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:18:49.341  INFO 17932 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.TransactionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-07-29 21:18:49.342  INFO 17932 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 JDBC repository interfaces.
+2021-07-29 21:18:49.347  INFO 17932 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-29 21:18:49.347  INFO 17932 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-29 21:18:49.386  INFO 17932 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 3 JPA repository interfaces.
+2021-07-29 21:18:49.714  INFO 17932 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-29 21:18:49.719  INFO 17932 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-29 21:18:49.719  INFO 17932 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-07-29 21:18:49.785  INFO 17932 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-29 21:18:49.785  INFO 17932 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1122 ms
+2021-07-29 21:18:49.964  INFO 17932 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-29 21:18:50.069  INFO 17932 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-29 21:18:50.346  INFO 17932 --- [main] liquibase.database                       : Set default schema name to public
+2021-07-29 21:18:50.384  INFO 17932 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2021-07-29 21:18:50.636  INFO 17932 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2021-07-29 21:18:50.678  INFO 17932 --- [main] liquibase.changelog                      : Tag 'db_init' applied to database
+2021-07-29 21:18:50.679  INFO 17932 --- [main] liquibase.changelog                      : ChangeSet db/changelog/db.changelog-master.xml::0::pavel_ter ran successfully in 3ms
+2021-07-29 21:18:50.693  INFO 17932 --- [main] liquibase.changelog                      : ChangeSet db/changelog/v-1.0/db.changelog-v.1.0.xml::1::pavel_ter ran successfully in 2ms
+2021-07-29 21:18:50.699  INFO 17932 --- [main] liquibase.changelog                      : ChangeSet db/changelog/v-1.0/db.changelog-v.1.0.xml::2::pavel_ter ran successfully in 2ms
+2021-07-29 21:18:50.704  INFO 17932 --- [main] liquibase.changelog                      : ChangeSet db/changelog/v-1.0/db.changelog-v.1.0.xml::3::pavel_ter ran successfully in 3ms
+2021-07-29 21:18:50.709  INFO 17932 --- [main] liquibase.changelog                      : Tag 'v.1.0' applied to database
+2021-07-29 21:18:50.710  INFO 17932 --- [main] liquibase.changelog                      : ChangeSet db/changelog/db.changelog-master.xml::4::pavel_ter ran successfully in 2ms
+2021-07-29 21:18:50.713  INFO 17932 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2021-07-29 21:18:50.779  INFO 17932 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-29 21:18:50.820  INFO 17932 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-07-29 21:18:50.898  INFO 17932 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-29 21:18:50.970  INFO 17932 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-07-29 21:18:51.412  INFO 17932 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-29 21:18:51.417  INFO 17932 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-29 21:18:51.612  WARN 17932 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-29 21:18:51.709  INFO 17932 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@263f6e96, org.springframework.security.web.context.SecurityContextPersistenceFilter@41c83af0, org.springframework.security.web.header.HeaderWriterFilter@5570ee6d, org.springframework.security.web.authentication.logout.LogoutFilter@2571bdf4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@504b4a97, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@60658389, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6f00c40e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@49741e80, org.springframework.security.web.session.SessionManagementFilter@594fcb22, org.springframework.security.web.access.ExceptionTranslationFilter@5749e633, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5003c114]
+2021-07-29 21:18:52.333  WARN 17932 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-07-29 21:18:52.347  INFO 17932 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2021-07-29 21:18:52.410  INFO 17932 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-07-29 21:18:52.411  INFO 17932 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2021-07-29 21:18:52.431  INFO 17932 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#78ab63b5:0/SimpleConnection@63541960 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 63124]
+2021-07-29 21:18:52.434  INFO 17932 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (spring-boot) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2021-07-29 21:18:52.472  INFO 17932 --- [main] c.t.p.PaymentserviceApplication          : Started PaymentserviceApplication in 4.121 seconds (JVM running for 4.666)
+2021-07-29 21:18:52.986  INFO 17932 --- [RMI TCP Connection(1)-192.168.0.104] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-29 21:18:52.986  INFO 17932 --- [RMI TCP Connection(1)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-29 21:18:52.988  INFO 17932 --- [RMI TCP Connection(1)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
