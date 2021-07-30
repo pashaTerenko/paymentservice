@@ -4,13 +4,30 @@ import com.terenko.paymentservice.DTO.AccountDTO;
 import com.terenko.paymentservice.models.Account;
 import com.terenko.paymentservice.models.Client;
 import com.terenko.paymentservice.models.Transaction;
+import com.terenko.paymentservice.repositories.AccountRepository;
+import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+@Service
 
 public class AccountServiceImpl implements AccountService{
+    final AccountRepository accountRepository;
+    public AccountServiceImpl(AccountRepository accountRepository) {
+        this.accountRepository = accountRepository;
+    }
+
     @Override
     public Account addAccount(AccountDTO accountDTO, Client owner) {
-        return null;
+        Account account =AccountDTO.from(accountDTO);
+        account.setClient(owner);
+        accountRepository.save(account);
+        return account;
+    }
+
+    @Override
+    public void updateAccount(Account account) {
+        accountRepository.save(account);
     }
 
     @Override
@@ -20,16 +37,31 @@ public class AccountServiceImpl implements AccountService{
 
     @Override
     public Account getById(long id) {
-        return null;
+        return accountRepository.findByAccountId(id);
     }
 
     @Override
     public List<Account> getByClient(Client client) {
-        return null;
+        return accountRepository.findAccountsByClient(client);
     }
 
     @Override
     public List<Account> getByTransaction(Transaction transaction) {
-        return null;
+        Account recipient = getByIncomingTransaction(transaction);
+       Account payer = getByDepartingTransaction(transaction);
+        ArrayList<Account> accounts = new ArrayList<>();
+        accounts.add(recipient);
+        accounts.add(payer);
+        return accounts;
+    }
+
+    @Override
+    public Account getByIncomingTransaction(Transaction transaction) {
+        return accountRepository.findByIncomingTransactionSetContaining(transaction);
+    }
+
+    @Override
+    public Account getByDepartingTransaction(Transaction transaction) {
+        return accountRepository.findByDepartingTransactionSetContaining(transaction);
     }
 }

@@ -1,0 +1,233 @@
+<html>
+<head>
+    <link rel="shortcut icon" type="image/ico" th:href="@{icon/favicon.ico}"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Partner Alarm</title>
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link th:href="@{css/mainM.css}" href="../../static/css/mainM.css"
+          rel="stylesheet" type="text/css" media="screen"/>
+    <script src="https://kit.fontawesome.com/c7ad7f982b.js" crossorigin="anonymous"></script>
+
+</head>
+<body th:style="
+'background:url( '+@{/icon/wallpaper.jpg}+ ');
+background-repeat:no-repeat;
+background-size: cover;'
+">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#addAppModal">Add App</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#addPartnerModal">Add Partner</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="partnerDelete()">Delete Partner</a>
+            </li>
+            <li class="nav-item">
+                <select class="browser-default custom-select" id="PL-select">Select partner</select>
+            </li>
+            <li class="nav-item">
+                <input type="text" id="searchInput" onchange="dropdownPL()">
+
+            </li>
+            <li class="nav-item">
+                <span id="messageSpan"></span>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/send" >Notification Page</a>
+            </li>
+            <li>
+
+                <div class="input-group input-group-sm mb-3">
+                    <textarea  id="errMessage" readonly> </textarea>
+
+
+                </div>
+            </li>
+
+        </ul>
+        </div>
+</nav>
+
+
+<div id="col" class="row" >
+    <div class="column">
+
+        <div id="dvTable">
+
+        </div>
+
+
+    </div>
+
+    <div class="column">
+        <div id="dvTableSel"></div>
+
+    </div>
+
+</div>
+<div id="addAppModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add App</h4>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" >App name</span>
+                    </div>
+                    <input type="Text" class="form-control-file"  id="addAppName">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" >Package</span>
+                    </div>
+                    <input type="Text" class="form-control-file"  id="addAppPackage">
+                    <input type="submit" class="btn btn-primary" id="addAppSubmit">
+                    <tr>
+                        <div class="loader" id="appspanloader" style="display: none"></div>
+                        <td><span id="appspan"></span></td>
+                    </tr>
+                    <tr>
+
+                    </tr>
+                    <tr>
+                        <div class="loader" id="addAppspan" style="display: none"></div>
+                        <td><span id="loadMessageSpan"></span></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="modal-footer">
+                <button id="clsLB" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <script>
+                    $("#clsLB").click(function () {
+                        $("#loadMessageSpan").text("")
+                    })
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="addPartnerModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Partner</h4>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Partner name</span>
+                        </div>
+
+                        <input id="PartnerNameInput" type="text" class="form-control" aria-label="Small"
+                               aria-describedby="inputGroup-sizing-sm">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sl">Partner chat ID</span>
+                        </div>
+
+                        <input id="PartnerChatIdInput" type="text" class="form-control" aria-label="Small"
+                               aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                    <input type="submit" class="btn btn-primary" id="addPartnerSubmit">
+                    <tr>
+                        <div class="loader" id="addPartnerLoader" style="display: none"></div>
+                        <td><span id="partnerAddSpan"></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button id="clsLBP" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <script>
+                    $("#clsLBP").click(function () {
+                        $("#PLdateSpan").text("");
+                    })
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div id="addImageModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Image</h4>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" >App add Image</span>
+                        </div>
+
+                        <tr>
+
+
+                        </tr>
+                        <tr>
+                            <span id="addImgspan" >Select image</span>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="modal-footer">
+                    <button id="clsImg" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <script>
+                        $("#clsImg").click(function () {
+                            $("#loadMessageSpan").text("")
+                            imageToSend=null;
+                            loadImgId=null;
+                        })
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+</div>
+
+<script type="text/javascript" th:src="@{/js/main.js}"></script>
+
+</div>
+</body>
+</html>

@@ -14,8 +14,12 @@ import org.springframework.security.crypto.password.StandardPasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    @Autowired
-    private UserDetailsServiceImpl userDetailsService;
+/*
+    private final UserDetailsServiceImpl userDetailsService;
+
+    public SecurityConfig(UserDetailsServiceImpl userDetailsService) {
+        this.userDetailsService = userDetailsService;
+    }
 
     @Autowired
     public void registerGlobalAuthentication(AuthenticationManagerBuilder auth) throws Exception {
@@ -56,4 +60,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private PasswordEncoder getShaPasswordEncoder(){
         return new StandardPasswordEncoder();
     }
+*/
 }

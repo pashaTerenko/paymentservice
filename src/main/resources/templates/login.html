@@ -1,0 +1,27 @@
+
+<html>
+<head>
+    <title>Partner Alarm</title>
+    <link rel="shortcut icon" type="image/ico" th:href="@{icon/favicon.ico}"/>
+</head>
+<body th:style="
+
+'background:url( '+@{/icon/wallpaper.jpg}+ ');
+background-repeat:no-repeat;
+background-size: cover;'
+">
+    <div align="center">
+
+
+
+        <form action="/jcheck" method="POST">
+            <font size="5" color="red" face="Arial">Login:</font>   <br><input type="text" name="j_login"><br/>
+            <font size="5" color="red" face="Arial">Password:</font>    <br><input type="password" name="j_password"><br/>
+            <input type="submit" />
+
+
+
+        </form>
+    </div>
+</body>
+</html>

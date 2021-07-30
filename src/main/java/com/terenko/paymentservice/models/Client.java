@@ -20,6 +20,7 @@ private long clientId;
 private String firstName;
 private String lastName;
 private String login;
+@Fetch(value = FetchMode.SELECT)
 private String password;/*
 @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 @Fetch(value= FetchMode.SELECT)*/
