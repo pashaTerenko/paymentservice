@@ -14,8 +14,8 @@ import java.util.Set;
 @Data
 public class Client extends BaseEntity{
 @Id
-@SequenceGenerator(name = "mySeqGen", sequenceName = "mySeq", initialValue = 98723450, allocationSize = 100)
-@GeneratedValue(generator = "mySeqGen")
+@SequenceGenerator(name = "mySeqGenCl", sequenceName = "mySeqCl", initialValue = 98723450, allocationSize = 100)
+@GeneratedValue(generator = "mySeqGenCl")
 private long clientId;
 private String firstName;
 private String lastName;

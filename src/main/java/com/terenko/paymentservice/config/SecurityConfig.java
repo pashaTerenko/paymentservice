@@ -1,4 +1,5 @@
 package com.terenko.paymentservice.config;
+/*
 
 import com.terenko.paymentservice.Service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +12,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.StandardPasswordEncoder;
 
 
-@Configuration
-@EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+*/
+
+public class SecurityConfig {
 /*
     private final UserDetailsServiceImpl userDetailsService;
 

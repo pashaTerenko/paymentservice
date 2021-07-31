@@ -1,6 +1,7 @@
 package com.terenko.paymentservice.Service;
 
 
+/*
 
 import com.terenko.paymentservice.models.Client;
 import org.springframework.security.core.GrantedAuthority;
@@ -32,4 +33,4 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         PasswordEncoder encoder= new StandardPasswordEncoder();
         return new User(client.getLogin(), client.getPassword(), roles);
     }
-}
+}*/

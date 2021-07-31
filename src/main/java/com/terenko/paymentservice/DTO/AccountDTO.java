@@ -6,6 +6,7 @@ import com.terenko.paymentservice.models.Account;
 import com.terenko.paymentservice.models.Client;
 import lombok.Data;
 
+import javax.validation.constraints.Pattern;
 import java.math.BigDecimal;
 
 @Data
@@ -17,6 +18,7 @@ public class AccountDTO {
     private long accountId;
 
     @JsonProperty("account_num")
+    @Pattern(regexp = "^\\\\d{9}$")
     private String accountNumber;
     @JsonProperty("account_type")
     private String accountType;

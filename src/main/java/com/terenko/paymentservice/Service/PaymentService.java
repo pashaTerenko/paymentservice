@@ -6,5 +6,6 @@ import com.terenko.paymentservice.models.Transaction;
 import java.util.List;
 
 public interface PaymentService {
-        List<TransactionDTO> ExecuteTransactions(List<TransactionDTO> transactionDTOList);
+        List<TransactionDTO> executeTransactions(List<TransactionDTO> transactionDTOList);
+        public TransactionDTO executeTransaction(TransactionDTO transactionDTO);
 }
