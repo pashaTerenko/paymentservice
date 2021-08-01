@@ -36,6 +36,12 @@ public class ClientController {
     public ClientDTO create(@Validated(ClientDTO.New.class)  @RequestBody  ClientDTO clientDTO) {
         return ClientDTO.of(clientService.addClient(clientDTO));
     }
-
+    @PostMapping(value = "createacc", consumes = { "application/json", "application/xml" }, produces = { "application/json", "application/xml" })
+    @ResponseStatus(HttpStatus.CREATED)
+    @JsonView(AccountDTO.Detail.class)
+    public AccountDTO create(@Validated(AccountDTO.New.class)  @RequestBody  AccountDTO accountDTO,@RequestParam("client_id") long clientId) {
+        Client client =clientService.getById(clientId);
+        return AccountDTO.of(accountService.addAccount(accountDTO,client));
+    }
 
 }

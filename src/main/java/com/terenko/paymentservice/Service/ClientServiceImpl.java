@@ -23,8 +23,7 @@ public class ClientServiceImpl implements ClientService {
     public Client addClient(ClientDTO clientDTO) {
         Client client = ClientDTO.from(clientDTO);
         clientRepository.save(client);
-        assert clientDTO.getAccounts() != null;
-
+        if(clientDTO.getAccounts()!=null)
         clientDTO.getAccounts().forEach(x ->
                 client.getAccounts().add(accountService.addAccount(x, client))
         );

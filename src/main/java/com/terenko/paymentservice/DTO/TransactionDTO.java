@@ -47,7 +47,7 @@ public class TransactionDTO {
 
     @JsonView({Detail.class})
     @Null(groups = {New.class})
-    private Date timestamp;
+    private String timestamp;
     @JsonProperty("source_acc_id")
     @JacksonXmlProperty(localName = "source_acc_id")
 
@@ -81,7 +81,7 @@ public class TransactionDTO {
     public static TransactionDTO of(Transaction transaction) {
         TransactionDTO transactionDTO = new TransactionDTO();
         transactionDTO.setPaymentId(transaction.getPaymentId());
-        transactionDTO.setTimestamp(transaction.getCreated());
+        transactionDTO.setTimestamp(transaction.getCreated().toString());
         transactionDTO.setStatus(transaction.getTransactionResult().toString());
         transactionDTO.setSourceAccId(transaction.getSourceAcc().getAccountId());
         transactionDTO.setDestAccId(transaction.getDestAcc().getAccountId());

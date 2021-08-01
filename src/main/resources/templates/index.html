@@ -23,95 +23,55 @@
     <script src="https://kit.fontawesome.com/c7ad7f982b.js" crossorigin="anonymous"></script>
 
 </head>
-<body th:style="
-'background:url( '+@{/icon/wallpaper.jpg}+ ');
-background-repeat:no-repeat;
-background-size: cover;'
-">
+<body >
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#" data-toggle="modal" data-target="#addAppModal">Add App</a>
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#addClientModal">Add Client</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" data-toggle="modal" data-target="#addPartnerModal">Add Partner</a>
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#addAccountModal">Add Account</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" onclick="partnerDelete()">Delete Partner</a>
-            </li>
-            <li class="nav-item">
-                <select class="browser-default custom-select" id="PL-select">Select partner</select>
-            </li>
-            <li class="nav-item">
-                <input type="text" id="searchInput" onchange="dropdownPL()">
-
-            </li>
-            <li class="nav-item">
-                <span id="messageSpan"></span>
+                <a class="nav-link" href="#" data-target="#transactionModal">Transaction</a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="/send" >Notification Page</a>
-            </li>
-            <li>
-
-                <div class="input-group input-group-sm mb-3">
-                    <textarea  id="errMessage" readonly> </textarea>
-
-
-                </div>
-            </li>
 
         </ul>
         </div>
 </nav>
 
 
-<div id="col" class="row" >
-    <div class="column">
 
         <div id="dvTable">
 
-        </div>
 
 
-    </div>
 
-    <div class="column">
-        <div id="dvTableSel"></div>
 
-    </div>
 
 </div>
-<div id="addAppModal" class="modal fade" role="dialog">
+<div id="addClientModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Add App</h4>
+                <h4 class="modal-title">Add Client</h4>
             </div>
             <div class="modal-body">
                 <table>
                     <div class="input-group-prepend">
-                        <span class="input-group-text" >App name</span>
+                        <span class="input-group-text" >First name</span>
                     </div>
-                    <input type="Text" class="form-control-file"  id="addAppName">
+                    <input type="Text" class="form-control-file"  id="addFirstName">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" >Package</span>
+                        <span class="input-group-text" >Last name</span>
                     </div>
-                    <input type="Text" class="form-control-file"  id="addAppPackage">
-                    <input type="submit" class="btn btn-primary" id="addAppSubmit">
+                    <input type="Text" class="form-control-file"  id="addLastName">
+                    <input type="submit" class="btn btn-primary" id="clientSubmit">
                     <tr>
-                        <div class="loader" id="appspanloader" style="display: none"></div>
-                        <td><span id="appspan"></span></td>
-                    </tr>
-                    <tr>
-
-                    </tr>
-                    <tr>
-                        <div class="loader" id="addAppspan" style="display: none"></div>
-                        <td><span id="loadMessageSpan"></span></td>
+                        <td><span id="clientspan"></span></td>
                     </tr>
 
                     </tbody>
@@ -119,10 +79,10 @@ background-size: cover;'
             </div>
 
             <div class="modal-footer">
-                <button id="clsLB" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="clsCl" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <script>
-                    $("#clsLB").click(function () {
-                        $("#loadMessageSpan").text("")
+                    $("#clsCl").click(function () {
+                        $("#clientspan").text("")
                     })
                 </script>
             </div>
@@ -130,40 +90,56 @@ background-size: cover;'
     </div>
 </div>
 
-<div id="addPartnerModal" class="modal fade" role="dialog">
+<div id="addAccountModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Add Partner</h4>
+                <h4 class="modal-title">Add Account</h4>
             </div>
             <div class="modal-body">
                 <table>
                     <div class="input-group input-group-sm mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-sm">Partner name</span>
+                            <span class="input-group-text" >Client id</span>
+                            <input id="addAccClientId" type="text" class="form-control" aria-label="Small"
+                                   aria-describedby="inputGroup-sizing-sm">
                         </div>
 
-                        <input id="PartnerNameInput" type="text" class="form-control" aria-label="Small"
-                               aria-describedby="inputGroup-sizing-sm">
+
+                        <div class="input-group input-group-sm mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-sl">Partner chat ID</span>
+                            <span class="input-group-text" >Account number</span>
+                            <input id="accNumInput" type="text" class="form-control" aria-label="Small"
+                                   aria-describedby="inputGroup-sizing-sm">
                         </div>
 
-                        <input id="PartnerChatIdInput" type="text" class="form-control" aria-label="Small"
+
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" >Account type</span>
+                            <input id="accTypeInput" type="text" class="form-control" aria-label="Small"
+                                   aria-describedby="inputGroup-sizing-sm">
+                        </div>
+
+
+                    </div>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" >Balance</span>
+                        <input id="accBalance" type="number" min="0" class="form-control" aria-label="Small"
                                aria-describedby="inputGroup-sizing-sm">
                     </div>
-                    <input type="submit" class="btn btn-primary" id="addPartnerSubmit">
+
+
+                    <input type="submit" class="btn btn-primary" id="accSubmit">
                     <tr>
-                        <div class="loader" id="addPartnerLoader" style="display: none"></div>
-                        <td><span id="partnerAddSpan"></span></td>
+                        <td><span id="accSpan"></span></td>
                     </tr>
                 </table>
             </div>
             <div class="modal-footer">
-                <button id="clsLBP" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="clsAcc" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <script>
-                    $("#clsLBP").click(function () {
-                        $("#PLdateSpan").text("");
+                    $("#clsAcc").click(function () {
+                        $("#accSpan").text("");
                     })
                 </script>
             </div>
@@ -172,37 +148,26 @@ background-size: cover;'
 </div>
 
 
-    <div id="addImageModal" class="modal fade" role="dialog">
+    <div id="transactionModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Add Image</h4>
+                    <h4 class="modal-title">Transaction</h4>
                 </div>
                 <div class="modal-body">
                     <table>
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" >App add Image</span>
-                        </div>
-
                         <tr>
-
-
+                            <td><span id="transSpan"></span></td>
                         </tr>
-                        <tr>
-                            <span id="addImgspan" >Select image</span>
-                        </tr>
-
-                        </tbody>
                     </table>
                 </div>
 
                 <div class="modal-footer">
-                    <button id="clsImg" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button id="clsTrans" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <script>
-                        $("#clsImg").click(function () {
-                            $("#loadMessageSpan").text("")
-                            imageToSend=null;
-                            loadImgId=null;
+                        $("#clsTrans").click(function () {
+                            $("#transSpan").text("")
+
                         })
                     </script>
                 </div>

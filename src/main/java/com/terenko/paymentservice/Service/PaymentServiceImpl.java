@@ -80,35 +80,38 @@ public class PaymentServiceImpl implements PaymentService {
         if (accountService.isExist(dto.getSourceAccId())) {
             Account account = accountService.getById(dto.getSourceAccId());
          bySearch=transactionService.getBySourceAccount(account);
-            if(!transactions.isEmpty())
-                transactions=   transactions.stream().filter(x->x.getSourceAcc().equals(account)).collect(Collectors.toList());
-            else  transactions.addAll(bySearch);
+         transactions=   transactions.stream().filter(x->x.getSourceAcc().equals(account)).collect(Collectors.toList());
+         transactions.addAll(bySearch);
         }else throw new IllegalArgumentException("source account  not found");
         if(dto.getDestAccId()!=0)
             if (accountService.isExist(dto.getDestAccId())) {
                 Account account = accountService.getById(dto.getDestAccId());
-           bySearch=transactionService.getBySourceAccount(account);
             if(!transactions.isEmpty())
                 transactions=    transactions.stream().filter(x->x.getDestAcc().equals(account)).collect(Collectors.toList());
-            else transactions.addAll(bySearch);
+            else{
+                bySearch=transactionService.getByDestinationAccount(account);
+                transactions.addAll(bySearch);
+            }
         }else  throw new IllegalArgumentException("destination account  not found");
         if(dto.getPayerId()!=0)
             if (clientService.isExist(dto.getPayerId())) {
                 Client client = clientService.getById(dto.getPayerId());
-            bySearch=transactionService.getBySourceClient(client);
             if(!transactions.isEmpty())
             transactions=    transactions.stream().filter(x->x.getSourceAcc().getClient().equals(client)).collect(Collectors.toList());
-
-            else transactions.addAll(bySearch);
+            else{
+                bySearch=transactionService.getBySourceClient(client);
+                transactions.addAll(bySearch);
+            }
         }else  throw new IllegalArgumentException("source client  not found");
         if(dto.getRecipientId()!=0)
             if (clientService.isExist(dto.getRecipientId())) {
                 Client  client = clientService.getById(dto.getRecipientId());
-            bySearch=transactionService.getByDestinationClient(client);
             if(!transactions.isEmpty())
-                transactions=    transactions.stream().filter(x->x.getDestAcc().getClient().equals(client)).collect(Collectors.toList());
-
-            else transactions.addAll(bySearch);
+                transactions=transactions.stream().filter(x->x.getDestAcc().getClient().equals(client)).collect(Collectors.toList());
+            else{
+                bySearch=transactionService.getByDestinationClient(client);
+                transactions.addAll(bySearch);
+            }
         }else  throw new IllegalArgumentException("destination client  not found");
         return transactions.stream().map(TransactionDTO::of).collect(Collectors.toList());
 

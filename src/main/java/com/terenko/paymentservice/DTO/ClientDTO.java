@@ -52,8 +52,6 @@ public class ClientDTO {
     private String login;
     @NotNull(groups = {New.class})
     private String password;*/
-  @Nullable
-  @NotNull(groups = {New.class})
   @Valid
     private Set< AccountDTO> accounts;
 
