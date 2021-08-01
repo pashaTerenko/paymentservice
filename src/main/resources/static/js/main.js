@@ -36,11 +36,13 @@ function addClient() {
         xhr.responseType = "json";
         $("#clientspan").text("");
 
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
+        xhr.onreadystatechange=function (){
+
+            if ( xhr.status === 201) {
                 $("#clientspan").text("client with id " + xhr.response.client_id + " create");
             }
         }
+
 
         xhr.send(data);
     });
@@ -53,15 +55,15 @@ function addAccount() {
         let bal = $("#accBalance").val();
 
         if (an === "") {
-            $("#clientspan").text("fill account number input");
+            $("#accSpan").text("fill account number input");
             return;
         }
         if (at === "") {
-            $("#clientspan").text("fill account type input");
+            $("#accSpan").text("fill account type input");
             return;
         }
         if (bal === 0) {
-            $("#clientspan").text("fill balance input");
+            $("#accSpan").text("fill balance input");
             return;
         }
 
@@ -72,16 +74,14 @@ function addAccount() {
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.responseType = "json";
-        $("#clientspan").text("");
+        $("#accSpan").text("");
 
         xhr.onreadystatechange = function () {
-            console.log(xhr.readyState);
-            console.log(xhr.status);
-            console.log(xhr.response.client_id);
 
-            if (xhr.readyState === 4 && xhr.status === 201) {
-                $("#clientspan").text("account " + xhr.response.client_id + " create");
-            }else    $("#clientspan").text( xhr.response.text );
+
+            if (xhr.status === 201) {
+                $("#accSpan").text("account " + xhr.response.client_id + " create");
+            }else    $("#accSpan").text( xhr.response.text );
         }
 
         xhr.send(data);

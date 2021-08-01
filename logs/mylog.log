@@ -7180,3 +7180,409 @@ Caused by: org.postgresql.util.PSQLException: ОШИБКА: повторяюще
 2021-08-01 17:14:59.742  INFO 14076 --- [RMI TCP Connection(1)-192.168.0.104] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2021-08-01 17:14:59.742  INFO 14076 --- [RMI TCP Connection(1)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2021-08-01 17:14:59.743  INFO 14076 --- [RMI TCP Connection(1)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-01 19:47:30.391  WARN 14076 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h16m2s890ms984µs400ns).
+2021-08-01 21:31:50.461  WARN 14076 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h9m49s583ms585µs900ns).
+2021-08-01 21:55:02.088  INFO 1000 --- [main] c.t.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 15.0.2 on WIN-K93OM2IS26K with PID 1000 (C:\Users\Teren\Desktop\paymentservice\target\classes started by Teren in C:\Users\Teren\Desktop\paymentservice)
+2021-08-01 21:55:02.091  INFO 1000 --- [main] c.t.p.PaymentServiceApplication          : No active profile set, falling back to default profiles: default
+2021-08-01 21:55:02.760  INFO 1000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 21:55:02.761  INFO 1000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-08-01 21:55:02.783  INFO 1000 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.AccountRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 21:55:02.784  INFO 1000 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.ClientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 21:55:02.785  INFO 1000 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.TransactionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 21:55:02.786  INFO 1000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 JDBC repository interfaces.
+2021-08-01 21:55:02.791  INFO 1000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 21:55:02.791  INFO 1000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-01 21:55:02.817  INFO 1000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 3 JPA repository interfaces.
+2021-08-01 21:55:03.149  INFO 1000 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-01 21:55:03.156  INFO 1000 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-01 21:55:03.157  INFO 1000 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-01 21:55:03.243  INFO 1000 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-01 21:55:03.243  INFO 1000 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1116 ms
+2021-08-01 21:55:03.447  INFO 1000 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-01 21:55:03.567  INFO 1000 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-01 21:55:03.886  INFO 1000 --- [main] liquibase.database                       : Set default schema name to public
+2021-08-01 21:55:03.939  INFO 1000 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2021-08-01 21:55:04.231  INFO 1000 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2021-08-01 21:55:04.267  INFO 1000 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2021-08-01 21:55:04.318  INFO 1000 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-01 21:55:04.360  INFO 1000 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-01 21:55:04.472  INFO 1000 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-01 21:55:04.545  INFO 1000 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-08-01 21:55:05.038  INFO 1000 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-01 21:55:05.045  INFO 1000 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-01 21:55:05.330  WARN 1000 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-01 21:55:05.668  INFO 1000 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2021-08-01 21:55:05.704  INFO 1000 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-01 21:55:05.715  INFO 1000 --- [main] c.t.p.PaymentServiceApplication          : Started PaymentServiceApplication in 3.957 seconds (JVM running for 4.525)
+2021-08-01 21:55:06.117  INFO 1000 --- [RMI TCP Connection(2)-192.168.0.104] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-01 21:55:06.117  INFO 1000 --- [RMI TCP Connection(2)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-01 21:55:06.118  INFO 1000 --- [RMI TCP Connection(2)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-08-01 21:55:15.167  WARN 1000 --- [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
+2021-08-01 21:55:25.159  INFO 1000 --- [http-nio-8080-exec-5] c.t.p.Service.ClientServiceImpl          : client with id 312 created
+2021-08-01 21:55:40.437  WARN 1000 --- [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
+2021-08-01 22:01:06.301  INFO 388 --- [main] c.t.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 15.0.2 on WIN-K93OM2IS26K with PID 388 (C:\Users\Teren\Desktop\paymentservice\target\classes started by Teren in C:\Users\Teren\Desktop\paymentservice)
+2021-08-01 22:01:06.303  INFO 388 --- [main] c.t.p.PaymentServiceApplication          : No active profile set, falling back to default profiles: default
+2021-08-01 22:01:06.946  INFO 388 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 22:01:06.947  INFO 388 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-08-01 22:01:06.967  INFO 388 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.AccountRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:01:06.968  INFO 388 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.ClientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:01:06.969  INFO 388 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.TransactionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:01:06.970  INFO 388 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 JDBC repository interfaces.
+2021-08-01 22:01:06.975  INFO 388 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 22:01:06.976  INFO 388 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-01 22:01:07.002  INFO 388 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 3 JPA repository interfaces.
+2021-08-01 22:01:07.352  INFO 388 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-01 22:01:07.358  INFO 388 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-01 22:01:07.358  INFO 388 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-01 22:01:07.441  INFO 388 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-01 22:01:07.441  INFO 388 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1102 ms
+2021-08-01 22:01:07.631  INFO 388 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-01 22:01:07.750  INFO 388 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-01 22:01:08.040  INFO 388 --- [main] liquibase.database                       : Set default schema name to public
+2021-08-01 22:01:08.081  INFO 388 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2021-08-01 22:01:08.325  INFO 388 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2021-08-01 22:01:08.361  INFO 388 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2021-08-01 22:01:08.399  INFO 388 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-01 22:01:08.434  INFO 388 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-01 22:01:08.501  INFO 388 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-01 22:01:08.572  INFO 388 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-08-01 22:01:09.063  INFO 388 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-01 22:01:09.069  INFO 388 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-01 22:01:09.359  WARN 388 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-01 22:01:09.715  INFO 388 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2021-08-01 22:01:09.754  INFO 388 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-01 22:01:09.765  INFO 388 --- [main] c.t.p.PaymentServiceApplication          : Started PaymentServiceApplication in 3.776 seconds (JVM running for 4.254)
+2021-08-01 22:01:09.872  INFO 388 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-01 22:01:09.872  INFO 388 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-01 22:01:09.873  INFO 388 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-01 22:01:12.578  WARN 388 --- [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
+2021-08-01 22:02:59.679  INFO 1772 --- [main] c.t.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 15.0.2 on WIN-K93OM2IS26K with PID 1772 (C:\Users\Teren\Desktop\paymentservice\target\classes started by Teren in C:\Users\Teren\Desktop\paymentservice)
+2021-08-01 22:02:59.681  INFO 1772 --- [main] c.t.p.PaymentServiceApplication          : No active profile set, falling back to default profiles: default
+2021-08-01 22:03:00.304  INFO 1772 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 22:03:00.304  INFO 1772 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-08-01 22:03:00.325  INFO 1772 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.AccountRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:03:00.326  INFO 1772 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.ClientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:03:00.327  INFO 1772 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.TransactionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:03:00.327  INFO 1772 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 JDBC repository interfaces.
+2021-08-01 22:03:00.332  INFO 1772 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 22:03:00.333  INFO 1772 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-01 22:03:00.358  INFO 1772 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 3 JPA repository interfaces.
+2021-08-01 22:03:00.680  INFO 1772 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-01 22:03:00.685  INFO 1772 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-01 22:03:00.686  INFO 1772 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-01 22:03:00.789  INFO 1772 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-01 22:03:00.789  INFO 1772 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1072 ms
+2021-08-01 22:03:00.997  INFO 1772 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-01 22:03:01.211  INFO 1772 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-01 22:03:01.497  INFO 1772 --- [main] liquibase.database                       : Set default schema name to public
+2021-08-01 22:03:01.537  INFO 1772 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2021-08-01 22:03:01.770  INFO 1772 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2021-08-01 22:03:01.804  INFO 1772 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2021-08-01 22:03:01.841  INFO 1772 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-01 22:03:01.867  INFO 1772 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-01 22:03:01.939  INFO 1772 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-01 22:03:01.999  INFO 1772 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-08-01 22:03:02.436  INFO 1772 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-01 22:03:02.442  INFO 1772 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-01 22:03:02.733  WARN 1772 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-01 22:03:03.086  INFO 1772 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2021-08-01 22:03:03.123  INFO 1772 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-01 22:03:03.134  INFO 1772 --- [main] c.t.p.PaymentServiceApplication          : Started PaymentServiceApplication in 3.761 seconds (JVM running for 4.24)
+2021-08-01 22:03:03.327  INFO 1772 --- [RMI TCP Connection(2)-192.168.0.104] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-01 22:03:03.327  INFO 1772 --- [RMI TCP Connection(2)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-01 22:03:03.328  INFO 1772 --- [RMI TCP Connection(2)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-01 22:05:27.619  INFO 10344 --- [main] c.t.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 15.0.2 on WIN-K93OM2IS26K with PID 10344 (C:\Users\Teren\Desktop\paymentservice\target\classes started by Teren in C:\Users\Teren\Desktop\paymentservice)
+2021-08-01 22:05:27.620  INFO 10344 --- [main] c.t.p.PaymentServiceApplication          : No active profile set, falling back to default profiles: default
+2021-08-01 22:05:28.252  INFO 10344 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 22:05:28.253  INFO 10344 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-08-01 22:05:28.274  INFO 10344 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.AccountRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:05:28.275  INFO 10344 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.ClientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:05:28.276  INFO 10344 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.TransactionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:05:28.277  INFO 10344 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 JDBC repository interfaces.
+2021-08-01 22:05:28.282  INFO 10344 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 22:05:28.282  INFO 10344 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-01 22:05:28.308  INFO 10344 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 3 JPA repository interfaces.
+2021-08-01 22:05:28.637  INFO 10344 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-01 22:05:28.643  INFO 10344 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-01 22:05:28.643  INFO 10344 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-01 22:05:28.721  INFO 10344 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-01 22:05:28.721  INFO 10344 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1068 ms
+2021-08-01 22:05:28.904  INFO 10344 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-01 22:05:29.123  INFO 10344 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-01 22:05:29.412  INFO 10344 --- [main] liquibase.database                       : Set default schema name to public
+2021-08-01 22:05:29.451  INFO 10344 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2021-08-01 22:05:29.685  INFO 10344 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2021-08-01 22:05:29.719  INFO 10344 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2021-08-01 22:05:29.770  INFO 10344 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-01 22:05:29.797  INFO 10344 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-01 22:05:29.863  INFO 10344 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-01 22:05:29.924  INFO 10344 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-08-01 22:05:30.368  INFO 10344 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-01 22:05:30.374  INFO 10344 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-01 22:05:30.648  WARN 10344 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-01 22:05:31.018  INFO 10344 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2021-08-01 22:05:31.056  INFO 10344 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-01 22:05:31.066  INFO 10344 --- [main] c.t.p.PaymentServiceApplication          : Started PaymentServiceApplication in 3.742 seconds (JVM running for 4.234)
+2021-08-01 22:05:31.300  INFO 10344 --- [RMI TCP Connection(2)-192.168.0.104] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-01 22:05:31.300  INFO 10344 --- [RMI TCP Connection(2)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-01 22:05:31.301  INFO 10344 --- [RMI TCP Connection(2)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-01 22:05:52.667  INFO 10344 --- [http-nio-8080-exec-1] c.t.p.Service.ClientServiceImpl          : client with id 412 created
+2021-08-01 22:05:52.671  INFO 10344 --- [http-nio-8080-exec-1] c.t.p.Service.AccountServiceImpl         : account with id 312 created
+2021-08-01 22:05:52.671  INFO 10344 --- [http-nio-8080-exec-1] c.t.p.Service.AccountServiceImpl         : account with id 313 created
+2021-08-01 22:07:11.326  INFO 6740 --- [main] c.t.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 15.0.2 on WIN-K93OM2IS26K with PID 6740 (C:\Users\Teren\Desktop\paymentservice\target\classes started by Teren in C:\Users\Teren\Desktop\paymentservice)
+2021-08-01 22:07:11.327  INFO 6740 --- [main] c.t.p.PaymentServiceApplication          : No active profile set, falling back to default profiles: default
+2021-08-01 22:07:11.955  INFO 6740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 22:07:11.955  INFO 6740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-08-01 22:07:11.975  INFO 6740 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.AccountRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:07:11.976  INFO 6740 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.ClientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:07:11.977  INFO 6740 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.TransactionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:07:11.978  INFO 6740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 JDBC repository interfaces.
+2021-08-01 22:07:11.983  INFO 6740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 22:07:11.983  INFO 6740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-01 22:07:12.009  INFO 6740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 3 JPA repository interfaces.
+2021-08-01 22:07:12.318  INFO 6740 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-01 22:07:12.323  INFO 6740 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-01 22:07:12.324  INFO 6740 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-01 22:07:12.408  INFO 6740 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-01 22:07:12.409  INFO 6740 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1044 ms
+2021-08-01 22:07:12.609  INFO 6740 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-01 22:07:12.716  INFO 6740 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-01 22:07:13.005  INFO 6740 --- [main] liquibase.database                       : Set default schema name to public
+2021-08-01 22:07:13.044  INFO 6740 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2021-08-01 22:07:13.274  INFO 6740 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2021-08-01 22:07:13.306  INFO 6740 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2021-08-01 22:07:13.353  INFO 6740 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-01 22:07:13.379  INFO 6740 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-01 22:07:13.444  INFO 6740 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-01 22:07:13.506  INFO 6740 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-08-01 22:07:13.938  INFO 6740 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-01 22:07:13.948  INFO 6740 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-01 22:07:14.243  WARN 6740 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-01 22:07:14.585  INFO 6740 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2021-08-01 22:07:14.621  INFO 6740 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-01 22:07:14.633  INFO 6740 --- [main] c.t.p.PaymentServiceApplication          : Started PaymentServiceApplication in 3.588 seconds (JVM running for 4.076)
+2021-08-01 22:07:14.947  INFO 6740 --- [RMI TCP Connection(2)-192.168.0.104] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-01 22:07:14.947  INFO 6740 --- [RMI TCP Connection(2)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-01 22:07:14.948  INFO 6740 --- [RMI TCP Connection(2)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-01 22:07:25.911  INFO 6740 --- [http-nio-8080-exec-3] c.t.p.Service.ClientServiceImpl          : client with id 512 created
+2021-08-01 22:07:40.823  INFO 6740 --- [http-nio-8080-exec-4] c.t.p.Service.ClientServiceImpl          : client with id 513 created
+2021-08-01 22:08:58.843  INFO 6740 --- [http-nio-8080-exec-9] c.t.p.Service.ClientServiceImpl          : client with id 514 created
+2021-08-01 22:11:44.939  INFO 7972 --- [main] c.t.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 15.0.2 on WIN-K93OM2IS26K with PID 7972 (C:\Users\Teren\Desktop\paymentservice\target\classes started by Teren in C:\Users\Teren\Desktop\paymentservice)
+2021-08-01 22:11:44.941  INFO 7972 --- [main] c.t.p.PaymentServiceApplication          : No active profile set, falling back to default profiles: default
+2021-08-01 22:11:45.554  INFO 7972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 22:11:45.555  INFO 7972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-08-01 22:11:45.576  INFO 7972 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.AccountRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:11:45.577  INFO 7972 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.ClientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:11:45.578  INFO 7972 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.TransactionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:11:45.579  INFO 7972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 JDBC repository interfaces.
+2021-08-01 22:11:45.583  INFO 7972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 22:11:45.584  INFO 7972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-01 22:11:45.609  INFO 7972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 3 JPA repository interfaces.
+2021-08-01 22:11:45.924  INFO 7972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-01 22:11:45.930  INFO 7972 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-01 22:11:45.930  INFO 7972 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-01 22:11:46.007  INFO 7972 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-01 22:11:46.007  INFO 7972 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1032 ms
+2021-08-01 22:11:46.187  INFO 7972 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-01 22:11:46.293  INFO 7972 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-01 22:11:46.583  INFO 7972 --- [main] liquibase.database                       : Set default schema name to public
+2021-08-01 22:11:46.627  INFO 7972 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2021-08-01 22:11:46.861  INFO 7972 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2021-08-01 22:11:46.906  INFO 7972 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2021-08-01 22:11:46.953  INFO 7972 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-01 22:11:46.980  INFO 7972 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-01 22:11:47.045  INFO 7972 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-01 22:11:47.108  INFO 7972 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-08-01 22:11:47.556  INFO 7972 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-01 22:11:47.562  INFO 7972 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-01 22:11:47.840  WARN 7972 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-01 22:11:48.206  INFO 7972 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2021-08-01 22:11:48.245  INFO 7972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-01 22:11:48.255  INFO 7972 --- [main] c.t.p.PaymentServiceApplication          : Started PaymentServiceApplication in 3.625 seconds (JVM running for 4.201)
+2021-08-01 22:11:48.576  INFO 7972 --- [RMI TCP Connection(3)-192.168.0.104] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-01 22:11:48.577  INFO 7972 --- [RMI TCP Connection(3)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-01 22:11:48.578  INFO 7972 --- [RMI TCP Connection(3)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-01 22:16:01.140  INFO 13024 --- [main] c.t.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 15.0.2 on WIN-K93OM2IS26K with PID 13024 (C:\Users\Teren\Desktop\paymentservice\target\classes started by Teren in C:\Users\Teren\Desktop\paymentservice)
+2021-08-01 22:16:01.141  INFO 13024 --- [main] c.t.p.PaymentServiceApplication          : No active profile set, falling back to default profiles: default
+2021-08-01 22:16:01.815  INFO 13024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 22:16:01.815  INFO 13024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-08-01 22:16:01.844  INFO 13024 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.AccountRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:16:01.845  INFO 13024 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.ClientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:16:01.846  INFO 13024 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.TransactionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:16:01.847  INFO 13024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 0 JDBC repository interfaces.
+2021-08-01 22:16:01.852  INFO 13024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 22:16:01.853  INFO 13024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-01 22:16:01.880  INFO 13024 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 3 JPA repository interfaces.
+2021-08-01 22:16:02.252  INFO 13024 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-01 22:16:02.260  INFO 13024 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-01 22:16:02.260  INFO 13024 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-01 22:16:02.354  INFO 13024 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-01 22:16:02.354  INFO 13024 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1177 ms
+2021-08-01 22:16:02.595  INFO 13024 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-01 22:16:02.726  INFO 13024 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-01 22:16:03.057  INFO 13024 --- [main] liquibase.database                       : Set default schema name to public
+2021-08-01 22:16:03.108  INFO 13024 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2021-08-01 22:16:03.433  INFO 13024 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2021-08-01 22:16:03.470  INFO 13024 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2021-08-01 22:16:03.524  INFO 13024 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-01 22:16:03.581  INFO 13024 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-01 22:16:03.724  INFO 13024 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-01 22:16:03.809  INFO 13024 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-08-01 22:16:04.340  INFO 13024 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-01 22:16:04.346  INFO 13024 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-01 22:16:04.659  WARN 13024 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-01 22:16:05.030  INFO 13024 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2021-08-01 22:16:05.070  INFO 13024 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-01 22:16:05.082  INFO 13024 --- [main] c.t.p.PaymentServiceApplication          : Started PaymentServiceApplication in 4.299 seconds (JVM running for 4.853)
+2021-08-01 22:16:05.262  INFO 13024 --- [RMI TCP Connection(1)-192.168.0.104] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-01 22:16:05.262  INFO 13024 --- [RMI TCP Connection(1)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-01 22:16:05.263  INFO 13024 --- [RMI TCP Connection(1)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-01 22:16:07.436  WARN 13024 --- [http-nio-8080-exec-9] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
+2021-08-01 22:16:52.041  INFO 15608 --- [main] c.t.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 15.0.2 on WIN-K93OM2IS26K with PID 15608 (C:\Users\Teren\Desktop\paymentservice\target\classes started by Teren in C:\Users\Teren\Desktop\paymentservice)
+2021-08-01 22:16:52.043  INFO 15608 --- [main] c.t.p.PaymentServiceApplication          : No active profile set, falling back to default profiles: default
+2021-08-01 22:16:52.648  INFO 15608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 22:16:52.649  INFO 15608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-08-01 22:16:52.669  INFO 15608 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.AccountRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:16:52.670  INFO 15608 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.ClientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:16:52.672  INFO 15608 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.TransactionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:16:52.672  INFO 15608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 JDBC repository interfaces.
+2021-08-01 22:16:52.677  INFO 15608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 22:16:52.677  INFO 15608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-01 22:16:52.702  INFO 15608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 3 JPA repository interfaces.
+2021-08-01 22:16:53.025  INFO 15608 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-01 22:16:53.031  INFO 15608 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-01 22:16:53.031  INFO 15608 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-01 22:16:53.112  INFO 15608 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-01 22:16:53.113  INFO 15608 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1034 ms
+2021-08-01 22:16:53.289  INFO 15608 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-01 22:16:53.506  INFO 15608 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-01 22:16:53.789  INFO 15608 --- [main] liquibase.database                       : Set default schema name to public
+2021-08-01 22:16:53.827  INFO 15608 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2021-08-01 22:16:54.053  INFO 15608 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2021-08-01 22:16:54.092  INFO 15608 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2021-08-01 22:16:54.129  INFO 15608 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-01 22:16:54.155  INFO 15608 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-01 22:16:54.219  INFO 15608 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-01 22:16:54.279  INFO 15608 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-08-01 22:16:54.711  INFO 15608 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-01 22:16:54.717  INFO 15608 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-01 22:16:54.991  WARN 15608 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-01 22:16:55.332  INFO 15608 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2021-08-01 22:16:55.368  INFO 15608 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-01 22:16:55.378  INFO 15608 --- [main] c.t.p.PaymentServiceApplication          : Started PaymentServiceApplication in 3.637 seconds (JVM running for 4.166)
+2021-08-01 22:16:55.626  INFO 15608 --- [RMI TCP Connection(2)-192.168.0.104] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-01 22:16:55.627  INFO 15608 --- [RMI TCP Connection(2)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-01 22:16:55.627  INFO 15608 --- [RMI TCP Connection(2)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-08-01 22:17:09.890  INFO 15608 --- [http-nio-8080-exec-6] c.t.p.Service.ClientServiceImpl          : client with id 612 created
+2021-08-01 22:17:38.904  INFO 13996 --- [main] c.t.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 15.0.2 on WIN-K93OM2IS26K with PID 13996 (C:\Users\Teren\Desktop\paymentservice\target\classes started by Teren in C:\Users\Teren\Desktop\paymentservice)
+2021-08-01 22:17:38.907  INFO 13996 --- [main] c.t.p.PaymentServiceApplication          : No active profile set, falling back to default profiles: default
+2021-08-01 22:17:39.587  INFO 13996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 22:17:39.587  INFO 13996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-08-01 22:17:39.611  INFO 13996 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.AccountRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:17:39.612  INFO 13996 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.ClientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:17:39.613  INFO 13996 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.TransactionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:17:39.614  INFO 13996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 JDBC repository interfaces.
+2021-08-01 22:17:39.619  INFO 13996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 22:17:39.620  INFO 13996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-01 22:17:39.647  INFO 13996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 3 JPA repository interfaces.
+2021-08-01 22:17:39.981  INFO 13996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-01 22:17:39.987  INFO 13996 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-01 22:17:39.987  INFO 13996 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-01 22:17:40.070  INFO 13996 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-01 22:17:40.070  INFO 13996 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1122 ms
+2021-08-01 22:17:40.254  INFO 13996 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-01 22:17:40.369  INFO 13996 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-01 22:17:40.655  INFO 13996 --- [main] liquibase.database                       : Set default schema name to public
+2021-08-01 22:17:40.694  INFO 13996 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2021-08-01 22:17:40.965  INFO 13996 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2021-08-01 22:17:40.999  INFO 13996 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2021-08-01 22:17:41.038  INFO 13996 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-01 22:17:41.067  INFO 13996 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-01 22:17:41.136  INFO 13996 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-01 22:17:41.199  INFO 13996 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-08-01 22:17:41.655  INFO 13996 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-01 22:17:41.661  INFO 13996 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-01 22:17:41.951  WARN 13996 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-01 22:17:42.327  INFO 13996 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2021-08-01 22:17:42.368  INFO 13996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-01 22:17:42.378  INFO 13996 --- [main] c.t.p.PaymentServiceApplication          : Started PaymentServiceApplication in 3.793 seconds (JVM running for 4.328)
+2021-08-01 22:17:42.421  INFO 13996 --- [RMI TCP Connection(3)-192.168.0.104] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-01 22:17:42.421  INFO 13996 --- [RMI TCP Connection(3)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-01 22:17:42.422  INFO 13996 --- [RMI TCP Connection(3)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-01 22:17:50.165  INFO 13996 --- [http-nio-8080-exec-3] c.t.p.Service.ClientServiceImpl          : client with id 712 created
+2021-08-01 22:52:34.914  INFO 11752 --- [main] c.t.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 15.0.2 on WIN-K93OM2IS26K with PID 11752 (C:\Users\Teren\Desktop\paymentservice\target\classes started by Teren in C:\Users\Teren\Desktop\paymentservice)
+2021-08-01 22:52:34.916  INFO 11752 --- [main] c.t.p.PaymentServiceApplication          : No active profile set, falling back to default profiles: default
+2021-08-01 22:52:35.536  INFO 11752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 22:52:35.537  INFO 11752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-08-01 22:52:35.557  INFO 11752 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.AccountRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:52:35.558  INFO 11752 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.ClientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:52:35.559  INFO 11752 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.TransactionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 22:52:35.560  INFO 11752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 JDBC repository interfaces.
+2021-08-01 22:52:35.565  INFO 11752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 22:52:35.565  INFO 11752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-01 22:52:35.591  INFO 11752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 3 JPA repository interfaces.
+2021-08-01 22:52:35.907  INFO 11752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-01 22:52:35.913  INFO 11752 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-01 22:52:35.913  INFO 11752 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-01 22:52:35.994  INFO 11752 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-01 22:52:35.994  INFO 11752 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1043 ms
+2021-08-01 22:52:36.174  INFO 11752 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-01 22:52:36.292  INFO 11752 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-01 22:52:36.572  INFO 11752 --- [main] liquibase.database                       : Set default schema name to public
+2021-08-01 22:52:36.611  INFO 11752 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2021-08-01 22:52:36.833  INFO 11752 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2021-08-01 22:52:36.865  INFO 11752 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2021-08-01 22:52:36.910  INFO 11752 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-01 22:52:36.936  INFO 11752 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-01 22:52:37.000  INFO 11752 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-01 22:52:37.059  INFO 11752 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-08-01 22:52:37.484  INFO 11752 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-01 22:52:37.490  INFO 11752 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-01 22:52:37.768  WARN 11752 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-01 22:52:38.113  INFO 11752 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2021-08-01 22:52:38.149  INFO 11752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-01 22:52:38.159  INFO 11752 --- [main] c.t.p.PaymentServiceApplication          : Started PaymentServiceApplication in 3.538 seconds (JVM running for 4.03)
+2021-08-01 22:52:38.513  INFO 11752 --- [RMI TCP Connection(3)-192.168.0.104] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-01 22:52:38.513  INFO 11752 --- [RMI TCP Connection(3)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-01 22:52:38.514  INFO 11752 --- [RMI TCP Connection(3)-192.168.0.104] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-08-01 22:53:20.069  INFO 11752 --- [http-nio-8080-exec-1] c.t.p.Service.ClientServiceImpl          : client with id 812 created
+2021-08-01 22:59:47.786  WARN 11752 --- [http-nio-8080-exec-10] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
+2021-08-01 22:59:55.165  INFO 11752 --- [http-nio-8080-exec-7] c.t.p.Service.ClientServiceImpl          : client with id 813 created
+2021-08-01 23:00:55.027  WARN 11752 --- [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
+2021-08-01 23:01:36.135  INFO 18364 --- [main] c.t.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 15.0.2 on WIN-K93OM2IS26K with PID 18364 (C:\Users\Teren\Desktop\paymentservice\target\classes started by Teren in C:\Users\Teren\Desktop\paymentservice)
+2021-08-01 23:01:36.137  INFO 18364 --- [main] c.t.p.PaymentServiceApplication          : No active profile set, falling back to default profiles: default
+2021-08-01 23:01:36.786  INFO 18364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 23:01:36.786  INFO 18364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-08-01 23:01:36.808  INFO 18364 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.AccountRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 23:01:36.809  INFO 18364 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.ClientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 23:01:36.810  INFO 18364 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.terenko.paymentservice.repositories.TransactionRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-08-01 23:01:36.811  INFO 18364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 JDBC repository interfaces.
+2021-08-01 23:01:36.816  INFO 18364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-01 23:01:36.816  INFO 18364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-01 23:01:36.843  INFO 18364 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 3 JPA repository interfaces.
+2021-08-01 23:01:37.181  INFO 18364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-08-01 23:01:37.188  INFO 18364 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-01 23:01:37.188  INFO 18364 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-01 23:01:37.277  INFO 18364 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-01 23:01:37.278  INFO 18364 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1106 ms
+2021-08-01 23:01:37.460  INFO 18364 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-01 23:01:37.580  INFO 18364 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-01 23:01:37.882  INFO 18364 --- [main] liquibase.database                       : Set default schema name to public
+2021-08-01 23:01:37.921  INFO 18364 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2021-08-01 23:01:38.166  INFO 18364 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2021-08-01 23:01:38.201  INFO 18364 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2021-08-01 23:01:38.240  INFO 18364 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-01 23:01:38.275  INFO 18364 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-01 23:01:38.349  INFO 18364 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-01 23:01:38.413  INFO 18364 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-08-01 23:01:38.873  INFO 18364 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-01 23:01:38.879  INFO 18364 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-01 23:01:39.169  WARN 18364 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-01 23:01:39.546  INFO 18364 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2021-08-01 23:01:39.585  INFO 18364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-08-01 23:01:39.596  INFO 18364 --- [main] c.t.p.PaymentServiceApplication          : Started PaymentServiceApplication in 3.773 seconds (JVM running for 4.259)
+2021-08-01 23:01:39.687  INFO 18364 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-01 23:01:39.687  INFO 18364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-01 23:01:39.689  INFO 18364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-08-01 23:01:40.009  WARN 18364 --- [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
+2021-08-01 23:02:03.748  INFO 18364 --- [http-nio-8080-exec-5] c.t.p.Service.ClientServiceImpl          : client with id 912 created

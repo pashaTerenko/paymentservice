@@ -33,7 +33,6 @@ public class PaymentController {
     @PostMapping(value = "transactions", consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, produces = { MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE  })
     @ResponseStatus(HttpStatus.OK)
     @JsonView(TransactionDTO.Status.class)
-
     public List<TransactionDTO> transactions(@Validated(TransactionDTO.New.class)  @RequestBody List<@Valid TransactionDTO> transactionDTOList) {
         return paymentService.executeTransactions(transactionDTOList);
     }
@@ -41,16 +40,13 @@ public class PaymentController {
     @PostMapping(value = "transaction", consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, produces = { MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE  })
     @ResponseStatus(HttpStatus.OK)
     @JsonView(TransactionDTO.Status.class)
-
     public TransactionDTO transaction(@Validated(TransactionDTO.New.class) @RequestBody  TransactionDTO transactionDTO)throws Exception {
         return  paymentService.executeTransaction(transactionDTO);
     }
     @GetMapping(value = "search", consumes = { "application/json", "application/xml" }, produces = { "application/json", "application/xml" })
     @ResponseStatus(HttpStatus.OK)
     @JsonView(TransactionDTO.Detail.class)
-
     public List<TransactionDTO> search(@Validated @RequestBody TransactionSearchDTO transactionSearchDTO) throws IllegalArgumentException {
-
         return paymentService.search(transactionSearchDTO);
     }
 }
