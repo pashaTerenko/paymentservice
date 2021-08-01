@@ -9,9 +9,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
+
 @Service
 
 public class AccountServiceImpl implements AccountService{
+    private static Logger log = Logger.getLogger(AccountServiceImpl.class.getName());
+
     final AccountRepository accountRepository;
     public AccountServiceImpl(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
@@ -19,9 +23,11 @@ public class AccountServiceImpl implements AccountService{
 
     @Override
     public Account addAccount(AccountDTO accountDTO, Client owner) {
+
         Account account =AccountDTO.from(accountDTO);
         account.setClient(owner);
         accountRepository.save(account);
+        log.info("account with id "+account.getAccountId()+ " created");
         return account;
     }
 

@@ -30,6 +30,7 @@ public class mvc extends WebMvcConfigurerAdapter
 
                         "classpath:/static/js/");
     }
+
     @Override
     public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
 

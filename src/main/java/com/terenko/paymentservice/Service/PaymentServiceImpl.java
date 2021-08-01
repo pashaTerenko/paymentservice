@@ -13,10 +13,12 @@ import org.springframework.transaction.annotation.Transactional;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 @Service
 public class PaymentServiceImpl implements PaymentService {
+    private static Logger log = Logger.getLogger(PaymentServiceImpl.class.getName());
     final AccountService accountService;
     final TransactionService transactionService;
     final ClientService clientService;
@@ -58,12 +60,14 @@ public class PaymentServiceImpl implements PaymentService {
                 transaction.setTransactionResult(TransactionResult.TRANSACTION_SUCCESS);
 
                 transactionService.saveTransaction(transaction);
-
+                log.info("transaction with id "+ transaction.getPaymentId()+" success");
             } else
                 throw new InsufficientFundsExeption();
         } catch (InsufficientFundsExeption e) {
             transaction.setTransactionResult(TransactionResult.TRANSACTION_FAIL);
             transactionService.saveTransaction(transaction);
+            log.info("transaction with id "+ transaction.getPaymentId()+" failed");
+
         }
 
 

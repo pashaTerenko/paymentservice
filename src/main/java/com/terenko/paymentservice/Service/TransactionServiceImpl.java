@@ -8,9 +8,13 @@ import com.terenko.paymentservice.repositories.TransactionRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.logging.Logger;
+
 @Service
 
 public class TransactionServiceImpl implements TransactionService{
+    private static Logger log = Logger.getLogger(TransactionServiceImpl.class.getName());
+
     final TransactionRepository transactionRepository;
 
     public TransactionServiceImpl(TransactionRepository transactionRepository) {

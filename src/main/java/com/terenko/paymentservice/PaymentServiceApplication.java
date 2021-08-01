@@ -11,7 +11,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication
 @EnableTransactionManagement
-@EnableAsync
 @EnableWebMvc
 public class PaymentServiceApplication {
 

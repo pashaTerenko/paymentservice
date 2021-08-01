@@ -7,9 +7,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.validation.constraints.NotNull;
+import java.util.logging.Logger;
 
 @Service
 public class ClientServiceImpl implements ClientService {
+    private static Logger log = Logger.getLogger(ClientServiceImpl.class.getName());
+
     final ClientRepository clientRepository;
     final AccountService accountService;
 
@@ -23,10 +26,13 @@ public class ClientServiceImpl implements ClientService {
     public Client addClient(ClientDTO clientDTO) {
         Client client = ClientDTO.from(clientDTO);
         clientRepository.save(client);
+        log.info("client with id "+client.getClientId()+ " created");
+
         if(clientDTO.getAccounts()!=null)
         clientDTO.getAccounts().forEach(x ->
                 client.getAccounts().add(accountService.addAccount(x, client))
         );
+
         return client;
     }
 

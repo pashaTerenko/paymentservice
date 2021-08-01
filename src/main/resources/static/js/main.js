@@ -75,7 +75,11 @@ function addAccount() {
         $("#clientspan").text("");
 
         xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log(xhr.readyState);
+            console.log(xhr.status);
+            console.log(xhr.response.client_id);
+
+            if (xhr.readyState === 4 && xhr.status === 201) {
                 $("#clientspan").text("account " + xhr.response.client_id + " create");
             }else    $("#clientspan").text( xhr.response.text );
         }

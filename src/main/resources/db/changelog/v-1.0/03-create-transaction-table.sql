@@ -1,16 +1,17 @@
+create sequence my_seq start 123456789 increment 100
+GO
 
 create table transaction (
                              payment_id int8 not null,
                              created timestamp,
                              updated timestamp,
-                             amount numeric(19, 2),
+                             amount numeric(19, 2) check (amount>=0),
                              reason varchar(255),
                              transaction_result int4 not null,
                              account_d_id int8 not null,
                              account_s_id int8 not null,
                              primary key (payment_id)
 )
-
 GO
 
 alter table transaction
