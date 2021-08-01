@@ -6,10 +6,13 @@ import com.terenko.paymentservice.repositories.ClientRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.validation.constraints.NotNull;
+
 @Service
-public class ClientServiceImpl implements ClientService{
+public class ClientServiceImpl implements ClientService {
     final ClientRepository clientRepository;
     final AccountService accountService;
+
     public ClientServiceImpl(ClientRepository clientRepository, AccountService accountService) {
         this.clientRepository = clientRepository;
         this.accountService = accountService;
@@ -20,7 +23,11 @@ public class ClientServiceImpl implements ClientService{
     public Client addClient(ClientDTO clientDTO) {
         Client client = ClientDTO.from(clientDTO);
         clientRepository.save(client);
-        clientDTO.getAccounts().forEach(x->accountService.addAccount(x,client));
+        assert clientDTO.getAccounts() != null;
+
+        clientDTO.getAccounts().forEach(x ->
+                client.getAccounts().add(accountService.addAccount(x, client))
+        );
         return client;
     }
 
@@ -30,12 +37,17 @@ public class ClientServiceImpl implements ClientService{
     }
 
     @Override
-    public Client getById(long id) {
-        return clientRepository.getById(id);
+
+    public  Client getById(long id) throws IllegalArgumentException  {
+        Client client =clientRepository.findByClientId(id);
+        if(client==null)throw new IllegalArgumentException("client not found");
+
+        return client;
     }
 
     @Override
-    public Client getByLogin(String login) {
-        return clientRepository.findByLogin(login);
+    public boolean isExist(long id) {
+        return clientRepository.existsByClientId(id);
     }
+
 }

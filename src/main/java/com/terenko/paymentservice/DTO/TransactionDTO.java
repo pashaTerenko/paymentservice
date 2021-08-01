@@ -54,9 +54,10 @@ public class TransactionDTO {
     @JsonView({Detail.class})
     @NotNull(groups = {New.class})
     private long sourceAccId;
-    @JsonView({Detail.class})
     @JsonProperty("dest_acc_id")
     @JacksonXmlProperty(localName = "dest_acc_id")
+    @JsonView({Detail.class})
+
     @NotNull(groups = {New.class})
     private long destAccId;
     @JsonView({Detail.class})
@@ -64,8 +65,18 @@ public class TransactionDTO {
     @Min(value = 0)
     private BigDecimal amount;
     @NotNull(groups = {New.class})
+    @JsonView({Detail.class})
     private String reason;
-
+    @JsonView({Detail.class})
+    @JsonProperty("src_acc_num")
+    private String sourceAccNum;
+    @JsonView({Detail.class})
+    @JsonProperty("dest_acc_num")
+    private String destAccNum;
+    @JsonView({Detail.class})
+    private ClientDTO payer;
+    @JsonView({Detail.class})
+    private ClientDTO recipient;
 
     public static TransactionDTO of(Transaction transaction) {
         TransactionDTO transactionDTO = new TransactionDTO();
@@ -76,7 +87,10 @@ public class TransactionDTO {
         transactionDTO.setDestAccId(transaction.getDestAcc().getAccountId());
         transactionDTO.setReason(transaction.getReason());
         transactionDTO.setAmount(transaction.getAmount());
-
+        transactionDTO.setSourceAccNum(transaction.getSourceAcc().getAccountNumber());
+        transactionDTO.setDestAccNum(transaction.getDestAcc().getAccountNumber());
+        transactionDTO.setPayer(ClientDTO.of(transaction.getSourceAcc().getClient()));
+        transactionDTO.setRecipient(ClientDTO.of(transaction.getDestAcc().getClient()));
         return transactionDTO;
     }
 

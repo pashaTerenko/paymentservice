@@ -16,4 +16,6 @@ public interface AccountService {
     List<Account> getByTransaction(Transaction transaction);
     Account getByIncomingTransaction(Transaction transaction);
     Account getByDepartingTransaction(Transaction transaction);
+    boolean isExist(long id);
+
 }

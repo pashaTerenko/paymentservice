@@ -64,4 +64,9 @@ public class AccountServiceImpl implements AccountService{
     public Account getByDepartingTransaction(Transaction transaction) {
         return accountRepository.findByDepartingTransactionSetContaining(transaction);
     }
+
+    @Override
+    public boolean isExist(long id) {
+        return accountRepository.existsByAccountId(id);
+    }
 }

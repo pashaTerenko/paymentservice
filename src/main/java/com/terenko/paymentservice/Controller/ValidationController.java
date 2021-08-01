@@ -26,6 +26,8 @@ class ValidationController {
     public ResponseEntity<ValidationErrorDTO> handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
         ValidationErrorDTO validationErrorDTO = new ValidationErrorDTO();
         validationErrorDTO.setCode(400);
+
+
         validationErrorDTO.setText(e.getLocalizedMessage());
 
         return  new ResponseEntity<>(validationErrorDTO,HttpStatus.valueOf(400));
@@ -36,13 +38,28 @@ class ValidationController {
     public ResponseEntity<ValidationErrorDTO> handleConstraintViolationException(ConstraintViolationException e) {
         ValidationErrorDTO validationErrorDTO = new ValidationErrorDTO();
         validationErrorDTO.setCode(400);
-        validationErrorDTO.setText(e.getLocalizedMessage());
+        StringBuilder sb = new StringBuilder();
+        e.getConstraintViolations().forEach(x->{
+            sb.append(x.getPropertyPath()+"="+x.getInvalidValue()+" :"+x.getMessage());
+            sb.append("\n");
+                }
+        );
+        validationErrorDTO.setText(sb.toString());
 
         return  new ResponseEntity<>(validationErrorDTO,HttpStatus.valueOf(400));
     }
     @ExceptionHandler(InsufficientFundsExeption.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<ValidationErrorDTO> InsufficientFundsExeption(InsufficientFundsExeption e) {
+        ValidationErrorDTO validationErrorDTO = new ValidationErrorDTO();
+        validationErrorDTO.setCode(400);
+        validationErrorDTO.setText(e.getLocalizedMessage());
+
+        return  new ResponseEntity<>(validationErrorDTO,HttpStatus.valueOf(400));
+    }
+    @ExceptionHandler(IllegalArgumentException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ResponseEntity<ValidationErrorDTO> IllegalArgumentException(IllegalArgumentException e) {
         ValidationErrorDTO validationErrorDTO = new ValidationErrorDTO();
         validationErrorDTO.setCode(400);
         validationErrorDTO.setText(e.getLocalizedMessage());

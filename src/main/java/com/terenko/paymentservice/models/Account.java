@@ -6,6 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Data
@@ -17,6 +18,7 @@ public class Account extends BaseEntity {
     private long accountId;
     @Column(unique = true)
     private String accountNumber;
+    //TODO enum for types
     private String accountType;
     private BigDecimal balance;
     @OneToMany(mappedBy="sourceAcc")
@@ -30,4 +32,17 @@ public class Account extends BaseEntity {
     @JoinColumn(name="client_id", nullable=false)
     private Client client;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Account account = (Account) o;
+        return accountId == account.accountId  && Objects.equals(client, account.client);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), accountId, accountNumber, accountType, balance, client);
+    }
 }

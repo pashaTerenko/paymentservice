@@ -55,8 +55,7 @@ class PaymentServiceApplicationTests {
         clientDTO1 = new ClientDTO();
         clientDTO1.setFirstName("fn1");
         clientDTO1.setFirstName("ln1");
-        clientDTO1.setLogin("l1");
-        clientDTO1.setPassword("psw1");
+
         AccountDTO accountDTO = new AccountDTO();
         accountDTO.setAccountNumber("242424");
         accountDTO.setAccountType("card/simple");
@@ -67,8 +66,7 @@ class PaymentServiceApplicationTests {
         clientDTO2 = new ClientDTO();
         clientDTO2.setFirstName("fn1");
         clientDTO2.setFirstName("ln1");
-        clientDTO1.setLogin("l1");
-        clientDTO2.setPassword("psw1");
+
         AccountDTO accountDTO2 = new AccountDTO();
         accountDTO2.setAccountNumber("242424");
         accountDTO2.setAccountType("card/simple");

@@ -24,8 +24,6 @@ public class Runner implements CommandLineRunner {
         clientDTO1 = new ClientDTO();
         clientDTO1.setFirstName("fn1");
         clientDTO1.setLastName("ln1");
-        clientDTO1.setLogin("l1");
-        clientDTO1.setPassword("psw1");
         AccountDTO accountDTO = new AccountDTO();
         accountDTO.setAccountNumber("223456789");
         accountDTO.setAccountType("card/simple");
@@ -34,10 +32,9 @@ public class Runner implements CommandLineRunner {
         hashSet.add(accountDTO);
         clientDTO1.setAccounts(hashSet);
         clientDTO2 = new ClientDTO();
-        clientDTO2.setFirstName("fn1");
-        clientDTO2.setLastName("ln1");
-        clientDTO1.setLogin("l1");
-        clientDTO2.setPassword("psw1");
+        clientDTO2.setFirstName("fn2");
+        clientDTO2.setLastName("ln2");
+
         AccountDTO accountDTO2 = new AccountDTO();
         accountDTO2.setAccountNumber("123456789");
         accountDTO2.setAccountType("card/simple");
@@ -55,7 +52,7 @@ public class Runner implements CommandLineRunner {
 
     }
     void PaymentTest() throws Exception {
-        Client cl1 = clientService.addClient(clientDTO1);
-        Client cl2 = clientService.addClient(clientDTO2);
+         clientService.addClient(clientDTO1);
+        clientService.addClient(clientDTO2);
     }
 }

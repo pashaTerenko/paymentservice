@@ -25,8 +25,11 @@ public class TransactionServiceImpl implements TransactionService{
     }
 
     @Override
-    public Transaction getById(long id) {
-        return null;
+    public Transaction getById(long id) throws IllegalArgumentException {
+        Transaction transaction = transactionRepository.findByPaymentId(id);
+        if(transaction==null)throw new IllegalArgumentException("transaction not found");
+
+        return transaction;
     }
 
     @Override

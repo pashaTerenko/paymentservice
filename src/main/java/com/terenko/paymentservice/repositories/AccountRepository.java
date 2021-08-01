@@ -14,7 +14,7 @@ public interface AccountRepository extends JpaRepository<Account,Long> {
     Account findByAccountNumber(long number);
 
     List<Account> findAccountsByClient(Client client);
-
+    boolean existsByAccountId(long id);
     Account findByAccountType(String type);
     Account findByIncomingTransactionSetContaining(Transaction transaction);
     Account findByDepartingTransactionSetContaining(Transaction transaction);
