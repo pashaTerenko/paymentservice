@@ -31,14 +31,14 @@ public class PaymentController {
     //Controller accept xml and json formats
 
     @PostMapping(value = "transactions", consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, produces = { MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE  })
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     @JsonView(TransactionDTO.Status.class)
     public List<TransactionDTO> transactions(@Validated(TransactionDTO.New.class)  @RequestBody List<@Valid TransactionDTO> transactionDTOList) {
         return paymentService.executeTransactions(transactionDTOList);
     }
 
     @PostMapping(value = "transaction", consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, produces = { MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE  })
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     @JsonView(TransactionDTO.Status.class)
     public TransactionDTO transaction(@Validated(TransactionDTO.New.class) @RequestBody  TransactionDTO transactionDTO)throws Exception {
         return  paymentService.executeTransaction(transactionDTO);
